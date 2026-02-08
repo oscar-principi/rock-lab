@@ -16,14 +16,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Efecto para detectar el scroll
+  // Efecto para detectar el scroll y cerrar el menú
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+      
+      // NUEVO: Si el usuario scrollea y el menú está abierto, lo cerramos
+      if (window.scrollY > 10) {
+        setIsOpen(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); // Quitamos isOpen de las dependencias para evitar loops innecesarios
 
   // Efecto para el Dark Mode
   useEffect(() => {
@@ -86,7 +92,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Grupo de botones Mobile */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
@@ -104,7 +109,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Menú Desktop */}
         <div className="hidden md:flex items-center gap-6">
           <nav className="flex gap-6 text-sm font-medium">
             <NavLink to="/">Home</NavLink>
