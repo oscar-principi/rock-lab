@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    /* Cambiamos slate-950 por zinc-950 y slate-100 por zinc-100 */
     <div className="min-h-screen flex flex-col bg-white text-black dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-300">
       <Navbar />
 
