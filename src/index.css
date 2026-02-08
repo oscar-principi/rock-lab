@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #121212;
+  --color-dark-card: #1e1e1e;
+  --color-dark-border: #2c2c2c;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply bg-white text-black dark:bg-dark-bg dark:text-gray-100 transition-colors duration-300;
+  }
+}
+
+/* Splash */
+#splash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#splash img {
+  width: 800px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+/* Barra de carga */
+.progress-bar {
+  width: 80%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #ff0000; 
+  animation: load 2s linear forwards;
+}
+
+@keyframes load {
+  from { width: 0%; }
+  to { width: 100%; }
+}
