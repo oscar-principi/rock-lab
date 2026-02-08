@@ -3,41 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/genfavicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/genfavicon-16.png" />
-
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png" />
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
 
+  <!-- Manifest -->
   <link rel="manifest" href="/site.webmanifest" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rock Lab | Desarrollo de Software</title>
   
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/index.css" />
+
+  <!-- Vite build CSS -->
+  <link rel="stylesheet" href="/assets/index.css" />
 </head>
-  <body>
-    <!-- Splash -->
-    <div id="splash">
-      <img src="/images/rock-lab-inicio.png" alt="Logo" />
-      <div class="progress-bar"><span></span></div>
-    </div>
+<body>
+  <!-- Splash -->
+  <div id="splash">
+    <img src="/images/rock-lab-inicio.png" alt="Logo" />
+    <div class="progress-bar"><span></span></div>
+  </div>
 
-    <!-- React root -->
-    <div id="root"></div>
+  <!-- React root -->
+  <div id="root"></div>
 
-    <script type="module" src="/src/main.tsx"></script>
-    <script>
-      window.addEventListener("load", () => {
-        const splash = document.getElementById("splash");
-        // delay antes de empezar el fade
-        setTimeout(() => {
-          splash.style.opacity = "0";
-          setTimeout(() => splash.style.display = "none", 2000);
-        }, 2000);
-      });
-    </script>
-  </body>
+  <!-- Vite build JS -->
+  <script type="module" src="/assets/index.js"></script>
+
+  <!-- Splash fade script -->
+  <script>
+    window.addEventListener("load", () => {
+      const splash = document.getElementById("splash");
+      // delay antes de empezar el fade
+      setTimeout(() => {
+        splash.style.opacity = "0";
+        setTimeout(() => splash.style.display = "none", 2000);
+      }, 2000);
+    });
+  </script>
+</body>
 </html>
