@@ -86,7 +86,7 @@ export default function Navbar() {
 
       {/* OVERLAY (Fuera del header para evitar bugs de stacking context) */}
       <div
-        className={`fixed inset-0 z-[60] transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-60 transition-opacity duration-300 md:hidden ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setIsOpen(false)}
@@ -96,7 +96,7 @@ export default function Navbar() {
 
       {/* SIDEBAR MOBILE */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-zinc-950 shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-zinc-950 shadow-2xl z-70 transform transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

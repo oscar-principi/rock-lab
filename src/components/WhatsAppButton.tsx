@@ -5,7 +5,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "5491122334455", // Reemplaza con tu número real
+  phoneNumber = "5492213043135", 
   message = "¡Hola Rock Lab! Me interesa saber más sobre sus servicios."
 }: WhatsAppButtonProps) {
   
@@ -22,7 +22,7 @@ export default function WhatsAppButton({
       <span className="absolute right-16 scale-0 group-hover:scale-100 transition-all duration-300 origin-right bg-zinc-800 text-white text-xs py-2 px-3 rounded-lg shadow-xl dark:bg-zinc-200 dark:text-zinc-900 font-bold whitespace-nowrap">
         ¡Hablemos! 🚀
       </span>
-
+    
       <div className="relative">
         <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20 group-hover:opacity-40"></div>
         <div className="relative bg-[#25D366] p-4 rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110 group-active:scale-95 flex items-center justify-center text-white">
