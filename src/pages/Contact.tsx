@@ -53,11 +53,11 @@ export default function Contact() {
       time: new Date().toLocaleString('es-AR', { dateStyle: 'medium', timeStyle: 'short' }),
     };
 
-    // TUS CREDENCIALES (Ya corregidas)
-    const SERVICE_ID = "service_mdr079i"; 
-    const PUBLIC_KEY = "Qp0p_SSuIFymAsk9_";
-    const TEMPLATE_ADMIN = "template_b97rawe"; 
-    const TEMPLATE_USER = "template_03fb5j6";
+    // TUS CREDENCIALES
+    const SERVICE_ID = "service_6uvpmms"; 
+    const PUBLIC_KEY = "ZyQVJQ5lwF8wWPU92";
+    const TEMPLATE_ADMIN = "template_7jlmo5d"; 
+    const TEMPLATE_USER = "template_owis9oh";
 
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ADMIN, templateParams, PUBLIC_KEY);
