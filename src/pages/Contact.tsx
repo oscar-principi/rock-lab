@@ -88,7 +88,7 @@ export default function Contact() {
     status === "idle"; // Solo es válido si no está enviando ni en espera
 
   return (
-    <section className="max-w-3xl mx-auto px-6 py-20 transition-colors duration-300">
+    <section className="max-w-3xl mx-auto px-6 py-40 transition-colors duration-300">
       <h2 className="text-4xl font-bold dark:text-zinc-100">
         Contacto Rock<span className="text-red-600">Lab</span>
       </h2>
