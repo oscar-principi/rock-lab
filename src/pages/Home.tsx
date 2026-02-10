@@ -24,14 +24,6 @@ export default function Home() {
           Hablemos de tu idea
           <ArrowRight size={16} />
         </Link>
-
-
-          {/* <Link
-            to="/servicios"
-            className="px-8 py-4 rounded-xl border border-zinc-300 dark:border-zinc-800 font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900 dark:text-zinc-300 transition-all"
-          >
-            Nuestras soluciones
-          </Link> */}
         </div>
       </div>
 

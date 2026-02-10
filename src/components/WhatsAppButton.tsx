@@ -1,22 +1,20 @@
+import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
 
 interface WhatsAppButtonProps {
   phoneNumber?: string;
   message?: string;
+  className?: string; // para estilos adicionales si es necesario
 }
 
-export default function WhatsAppButton({
-  phoneNumber = "5492213043135", 
-  message = "¡Hola Rock Lab! Me interesa saber más sobre sus servicios."
-}: WhatsAppButtonProps) {
-  
-  const whatsappUrl: string = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+export const WhatsAppButton = ({ phoneNumber, message, className = "" }: WhatsAppButtonProps) => {
+  const whatsappUrl = useWhatsAppUrl(phoneNumber, message);
 
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 group flex items-center justify-center"
+      className={`fixed bottom-6 right-6 z-50 group flex items-center justify-center ${className}`}
       aria-label="Contactar por WhatsApp"
     >
       <span className="absolute right-16 scale-0 group-hover:scale-100 transition-all duration-300 origin-right bg-zinc-800 text-white text-xs py-2 px-3 rounded-lg shadow-xl dark:bg-zinc-200 dark:text-zinc-900 font-bold whitespace-nowrap">
@@ -38,4 +36,4 @@ export default function WhatsAppButton({
       </div>
     </a>
   );
-}
+};

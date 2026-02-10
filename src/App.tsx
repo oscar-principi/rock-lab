@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar.tsx";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 
-import Home from "./pages/Home.tsx";
+import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 
 export default function App() {
