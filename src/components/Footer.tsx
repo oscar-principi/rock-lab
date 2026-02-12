@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex gap-4">
           {/* Instagram */}
           <a
-            href="https://instagram.com/rocklab.dev"
+            href="https://www.instagram.com/desarrollo.software.rocklab/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-red-600 transition-colors"
