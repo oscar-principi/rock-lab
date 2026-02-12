@@ -33,7 +33,7 @@ export default function Footer() {
         {/* Texto */}
         <div>
           © {new Date().getFullYear()}{" "}
-          <span className="text-red-600 font-semibold dark:text-red-500">
+          <span className="text-red-600 font-semibold dark:text-red-600">
             Rock Lab
           </span>{" "}
           — Desarrollo de Software
