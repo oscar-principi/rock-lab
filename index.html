@@ -19,11 +19,18 @@
   <!-- Vite build CSS -->
   <link rel="stylesheet" href="/src/index.css" />
 </head>
-<body>
+<body class="bg-white dark:bg-black transition-colors">
+  <script type="module" src="/src/utils/theme-init.ts"></script>
   <!-- Splash -->
-  <div id="splash">
-    <img src="/images/rock-lab-inicio.png" alt="Logo" />
-    <div class="progress-bar"><span></span></div>
+  <div id="splash" class="flex flex-col items-center justify-center bg-white dark:bg-black">
+    <div class="text-5xl md:text-6xl font-black tracking-tighter">
+      <span class="text-red-600">Rock</span>
+      <span class="text-black dark:text-zinc-100">Lab</span>
+    </div>
+    <span class="text-base md:text-lg uppercase tracking-[0.2em] font-bold text-gray-500 dark:text-zinc-500 mt-4 transition-colors group-hover:text-red-600">
+      desarrollo de Software
+    </span>
+    <div class="progress-bar mt-8"><span></span></div>
   </div>
 
   <!-- React root -->
@@ -39,7 +46,7 @@
       // delay antes de empezar el fade
       setTimeout(() => {
         splash.style.opacity = "0";
-        setTimeout(() => splash.style.display = "none", 2000);
+        setTimeout(() => splash.style.display = "none", 1000);
       }, 2000);
     });
   </script>

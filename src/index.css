@@ -22,7 +22,7 @@
   flex-direction: column; 
   align-items: center;
   justify-content: center;
-  background: #fff;
+  /* background now controlled by Tailwind classes */
   z-index: 9999;
   opacity: 1;
   transition: opacity 0.5s ease;
