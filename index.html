@@ -12,7 +12,21 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rock Lab | Desarrollo de Software</title>
-  
+
+  <!-- inline theme script: read stored preference immediately to avoid flash -->
+  <script>
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+        document.documentElement.style.backgroundColor = dark ? '#000' : '#fff';
+      } catch (e) {
+        // localStorage might be unavailable (e.g. incognito); ignore
+      }
+    })();
+  </script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
