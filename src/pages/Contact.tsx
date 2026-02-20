@@ -6,12 +6,14 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "cooldown">("idle");
   const [secondsLeft, setSecondsLeft] = useState(0);
 
-  // Lógica para el contador de bloqueo (2 minutos)
+  // 1. Definimos el límite máximo de caracteres
+  const MAX_CHARS = 2000;
+
   useEffect(() => {
     const lastSend = localStorage.getItem("lastSendTime");
     if (lastSend) {
       const diff = Date.now() - parseInt(lastSend);
-      const remaining = 120000 - diff; // 120.000 ms = 2 min
+      const remaining = 120000 - diff;
       if (remaining > 0) {
         setStatus("cooldown");
         setSecondsLeft(Math.ceil(remaining / 1000));
@@ -37,7 +39,12 @@ export default function Contact() {
   }, [status, secondsLeft]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // 2. Si es el mensaje, validamos que no supere el máximo antes de actualizar el estado
+    if (name === "mensaje" && value.length > MAX_CHARS) return;
+
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,7 +60,6 @@ export default function Contact() {
       time: new Date().toLocaleString('es-AR', { dateStyle: 'medium', timeStyle: 'short' }),
     };
 
-    // TUS CREDENCIALES
     const SERVICE_ID = "service_6uvpmms"; 
     const PUBLIC_KEY = "ZyQVJQ5lwF8wWPU92";
     const TEMPLATE_ADMIN = "template_7jlmo5d"; 
@@ -64,10 +70,9 @@ export default function Contact() {
       await emailjs.send(SERVICE_ID, TEMPLATE_USER, templateParams, PUBLIC_KEY);
 
       setStatus("success");
-      localStorage.setItem("lastSendTime", Date.now().toString()); // Guardamos el momento del envío
+      localStorage.setItem("lastSendTime", Date.now().toString());
       setFormData({ nombre: "", email: "", mensaje: "" });
       
-      // Después de 3 segundos de "Éxito" (botón verde), pasamos al modo espera (2 min)
       setTimeout(() => {
         setStatus("cooldown");
         setSecondsLeft(120);
@@ -85,7 +90,7 @@ export default function Contact() {
     formData.nombre.trim() !== "" && 
     emailRegex.test(formData.email) && 
     formData.mensaje.trim() !== "" &&
-    status === "idle"; // Solo es válido si no está enviando ni en espera
+    status === "idle";
 
   return (
     <section className="max-w-3xl mx-auto px-6 py-40 transition-colors duration-300">
@@ -112,11 +117,18 @@ export default function Contact() {
           className="w-full p-3 rounded-xl border border-gray-300 outline-none transition-colors bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-red-500 disabled:opacity-50"
         />
 
-        <textarea
-          name="mensaje" value={formData.mensaje} onChange={handleChange}
-          placeholder="Tu mensaje..." rows={4} disabled={status !== "idle"}
-          className="w-full p-3 rounded-xl border border-gray-300 outline-none transition-colors bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-red-500 disabled:opacity-50"
-        />
+        {/* 3. Agrupamos el textarea con su contador */}
+        <div className="relative">
+          <textarea
+            name="mensaje" value={formData.mensaje} onChange={handleChange}
+            placeholder="Tu mensaje..." rows={4} disabled={status !== "idle"}
+            className="w-full p-3 rounded-xl border border-gray-300 outline-none transition-colors bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-red-500 disabled:opacity-50"
+          />
+          {/* Contador visual */}
+          <div className="text-right text-xs mt-1 text-gray-500 dark:text-zinc-500">
+            {formData.mensaje.length} / {MAX_CHARS}
+          </div>
+        </div>
 
         <button
           type="submit"
