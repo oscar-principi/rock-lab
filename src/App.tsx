@@ -18,7 +18,7 @@ export default function App() {
         </Routes>
       </main>
       
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
 
       <Footer />
     </div>
