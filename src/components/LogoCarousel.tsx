@@ -1,7 +1,7 @@
 
 const EMPRESAS = [
   // { nombre: "Muebles Finochio", url: "https://oscar-principi.github.io/Muebles-Finochio/" },
-  { nombre: "Bohemio Mates", url: "https://oscar-principi.github.io/bohemio-mates/#/" },
+  { nombre: "Bohemio", url: "https://oscar-principi.github.io/bohemio-mates/#/" },
 ];
 
 export const LogoCarousel = () => {
@@ -32,7 +32,7 @@ export const LogoCarousel = () => {
         <div className="absolute right-0 z-10 w-24 md:w-48 h-full bg-linear-to-l from-white via-white/80 dark:from-zinc-950 dark:via-zinc-950/80 to-transparent pointer-events-none transition-colors duration-300" /> */}
 
         <div className="animate-marquee-infinite">
-          {[...EMPRESAS, ...EMPRESAS, ...EMPRESAS, ...EMPRESAS].map((empresa, index) => (
+          {[...EMPRESAS, ...EMPRESAS, ...EMPRESAS, ...EMPRESAS, ...EMPRESAS, ...EMPRESAS].map((empresa, index) => (
             <div 
               key={index} 
               className="mx-10 md:mx-20 shrink-0 flex items-center justify-center"
