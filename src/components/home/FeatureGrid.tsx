@@ -1,7 +1,7 @@
 import { Feature } from "./Feature";
 
 export const FeatureGrid = () => (
-  <div className="grid md:grid-cols-2 gap-8 mt-0">
+  <div className="grid md:grid-cols-2 gap-8">
     <Feature 
       title="Software Web" 
       desc="Sitios y aplicaciones web para mostrar tu marca y automatizar procesos."
