@@ -1,6 +1,6 @@
 
 const EMPRESAS = [
-  // { nombre: "Muebles Finochio", url: "https://oscar-principi.github.io/Muebles-Finochio/" },
+  { nombre: "Nexos", url: "https://oscar-principi.github.io/nexos-espacio-terapeutico/#/" },
   { nombre: "Bohemio", url: "https://oscar-principi.github.io/bohemio-mates/#/" },
 ];
 
