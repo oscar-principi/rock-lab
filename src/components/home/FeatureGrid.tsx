@@ -53,7 +53,7 @@ export const FeatureGrid = () => (
 
       {/* Precio destacado */}
       <div className="flex items-end gap-2 px-4 py-3 rounded-2xl bg-red-600/5 dark:bg-red-600/10 border border-red-600/15">
-        <span className="text-3xl font-extrabold text-red-600">$350.000</span>
+        <span className="text-3xl font-extrabold text-red-600">$250.000</span>
         <span className="text-gray-500 dark:text-zinc-500 text-sm mb-1">pesos · final</span>
       </div>
 
