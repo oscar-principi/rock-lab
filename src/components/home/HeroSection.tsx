@@ -107,16 +107,20 @@ const DeviceMockup = () => (
 );
 
 export const HeroSection = () => (
-  <div className="space-y-16 pt-24">
+  <div className="space-y-16 pt-14">
 
     <div className="text-center space-y-6">
       <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight dark:text-zinc-100">
         Sitios web y sistemas <br />
-        <span className="text-red-600 italic">que hacen crecer tu negocio.</span>
       </h1>
+      <h2 className="text-2xl md:text-5xl font-semibold tracking-tight dark:text-zinc-300">
+        <span className="text-red-600 italic">que hacen crecer tu negocio.</span>
+      </h2>
+
       <p className="text-gray-600 dark:text-zinc-400 max-w-xl mx-auto text-xl leading-relaxed">
         Diseño moderno y profesional, dominio, hosting.
       </p>
+        <DeviceMockup />
       <div className="flex flex-wrap justify-center gap-4 pt-2">
         <Link
           to="/contacto"
@@ -143,7 +147,6 @@ export const HeroSection = () => (
       ))}
     </div>
 
-    <DeviceMockup />
 
   </div>
 );
