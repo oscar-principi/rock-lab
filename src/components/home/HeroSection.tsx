@@ -5,7 +5,7 @@ const stats = [
   { value: "7-10", label: "días de entrega" },
   { value: "$350K", label: "desde" },
   { value: "100%", label: "asistido" },
-  { value: "1 año", label: "hosting incluido" },
+  { value: "1 año", label: "dominio incluido" },
 ];
 
 const DeviceMockup = () => (
@@ -60,7 +60,7 @@ const DeviceMockup = () => (
 
     {/* Celular */}
     <div className="relative z-20 drop-shadow-2xl shrink-0" style={{ width: 'min(112px, 26vw)' }}>
-      <div className="bg-gray-900 rounded-[1.5rem] border-[3px] border-gray-700 overflow-hidden">
+      <div className="bg-gray-900 rounded-1.5rem border-[3px] border-gray-700 overflow-hidden">
         {/* Dynamic island */}
         <div className="bg-gray-950 flex justify-center pt-2 pb-1">
           <div className="w-10 h-2 bg-gray-800 rounded-full" />

@@ -6,7 +6,6 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "cooldown">("idle");
   const [secondsLeft, setSecondsLeft] = useState(0);
 
-  // 1. Definimos el límite máximo de caracteres
   const MAX_CHARS = 2000;
 
   useEffect(() => {
@@ -41,7 +40,6 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
-    // 2. Si es el mensaje, validamos que no supere el máximo antes de actualizar el estado
     if (name === "mensaje" && value.length > MAX_CHARS) return;
 
     setFormData({ ...formData, [name]: value });
@@ -117,14 +115,12 @@ export default function Contact() {
           className="w-full p-3 rounded-xl border border-gray-300 outline-none transition-colors bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-red-500 disabled:opacity-50"
         />
 
-        {/* 3. Agrupamos el textarea con su contador */}
         <div className="relative">
           <textarea
             name="mensaje" value={formData.mensaje} onChange={handleChange}
             placeholder="Tu mensaje..." rows={4} disabled={status !== "idle"}
             className="w-full p-3 rounded-xl border border-gray-300 outline-none transition-colors bg-white dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:border-red-500 disabled:opacity-50"
           />
-          {/* Contador visual */}
           <div className="text-right text-xs mt-1 text-gray-500 dark:text-zinc-500">
             {formData.mensaje.length} / {MAX_CHARS}
           </div>

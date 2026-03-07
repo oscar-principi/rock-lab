@@ -16,18 +16,6 @@ export default function Footer() {
           >
             <Instagram size={20} />
           </a>
-
-          {/* LinkedIn (futuro) */}
-          {/*
-          <a
-            href="https://linkedin.com/company/rocklab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-red-600 transition-colors"
-          >
-            <Linkedin size={20} />
-          </a>
-          */}
         </div>
 
         {/* Texto */}
