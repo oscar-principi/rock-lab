@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const stats = [
   { value: "7-10", label: "días de entrega" },
-  { value: "$350K", label: "desde" },
+  { value: "$200K", label: "desde" },
   { value: "100%", label: "asistido" },
   { value: "1 año", label: "dominio incluido" },
 ];
