@@ -1,6 +1,5 @@
 import { HeroSection } from "../components/home/HeroSection";
-import { FeatureGrid } from "../components/home/FeatureGrid";
-import { LogoCarousel } from "../components/LogoCarousel";
+import { LogoCarousel } from "../components/layout/LogoCarousel";
 
 export default function Home() {
   return (
@@ -9,14 +8,6 @@ export default function Home() {
       <HeroSection />
 
       <LogoCarousel />
-
-      <FeatureGrid />
-
-      <div className="border-t border-zinc-200 dark:border-zinc-800 pt-10 text-center">
-        <p className="text-zinc-500 dark:text-zinc-500 font-mono text-sm uppercase tracking-widest">
-          React • TypeScript • .NET Core • C# • SQL Server • GitHub • Azure
-        </p>
-      </div>
 
     </main>
   );

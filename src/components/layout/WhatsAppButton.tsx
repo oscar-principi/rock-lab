@@ -1,9 +1,9 @@
-import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
+import { useWhatsAppUrl } from "../../hooks/useWhatsAppUrl";
 
 interface WhatsAppButtonProps {
   phoneNumber?: string;
   message?: string;
-  className?: string; // para estilos adicionales si es necesario
+  className?: string; 
 }
 
 export const WhatsAppButton = ({ phoneNumber, message, className = "" }: WhatsAppButtonProps) => {

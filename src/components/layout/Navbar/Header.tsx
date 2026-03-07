@@ -30,6 +30,7 @@ export default function Header({ darkMode, setDarkMode, isOpen, setIsOpen, scrol
           <div className="hidden md:flex items-center gap-6">
             <nav className="flex gap-6 text-sm font-medium">
               <NavLink to="/">Home</NavLink>
+              <NavLink to="/servicios">Servicios</NavLink>
               <NavLink to="/contacto">Contacto</NavLink>
             </nav>
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -71,6 +72,7 @@ export default function Header({ darkMode, setDarkMode, isOpen, setIsOpen, scrol
           </div>
           <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
           <NavLink to="/contacto" onClick={() => setIsOpen(false)}>Contacto</NavLink>
+          <NavLink to="/servicios" onClick={() => setIsOpen(false)}>Servicios</NavLink>
         </nav>
       </div>
     </>
