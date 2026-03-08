@@ -1,6 +1,6 @@
 import { HeroSection } from "../components/home/HeroSection";
 import { LogoCarousel } from "../components/layout/LogoCarousel";
-import { WhatsAppButton } from "../components/layout/WhatsAppButton";
+// import { WhatsAppButton } from "../components/layout/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
 
       <LogoCarousel />
 
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
 
     </main>
   );
