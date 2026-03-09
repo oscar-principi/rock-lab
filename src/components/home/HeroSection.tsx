@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const stats = [
-  { value: "Webs en 10", label: "días de entrega" },
+  { value: "10", label: "días de entrega" },
   { value: "$250K", label: "desde" },
   { value: "100%", label: "asistido" },
   { value: "1 año", label: "dominio incluido" },
