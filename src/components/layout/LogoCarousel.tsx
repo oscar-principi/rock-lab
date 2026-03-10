@@ -1,7 +1,15 @@
 
 const EMPRESAS = [
-  { nombre: "Nexos", url: "https://oscar-principi.github.io/nexos-espacio-terapeutico/#/" },
-  { nombre: "Bohemio", url: "https://oscar-principi.github.io/bohemio-mates/#/" },
+  {
+    nombre: "Bohemio",
+    url: "https://oscar-principi.github.io/bohemio-mates/#/",
+    logo: "/images/empresas/bohemio_logo_transparent.png",
+  },
+  {
+    nombre: "Nexos",
+    url: "https://oscar-principi.github.io/nexos-espacio-terapeutico/#/",
+    logo: "/images/empresas/logo-completo.jpg",
+  },
 ];
 
 export const LogoCarousel = () => {
@@ -37,24 +45,25 @@ export const LogoCarousel = () => {
               key={index} 
               className="mx-10 md:mx-20 shrink-0 flex items-center justify-center"
             >
-              <a 
-                href={empresa.url} 
-                target="_blank" 
+              <a
+                href={empresa.url}
+                target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col text-left transition-all duration-300 transform hover:scale-110"
+                className="group flex items-center justify-center transition-all duration-300 transform hover:scale-110"
               >
-                {empresa.nombre.split(" ").map((palabra, i) => (
-                  <span 
-                    key={i}
-                    className={`
-                      text-2xl md:text-4xl font-extrabold tracking-tighter leading-[0.8]
-                      text-zinc-300 dark:text-zinc-800 
-                      group-hover:text-red-600 transition-colors duration-300
-                    `}
-                  >
-                    {palabra}
-                  </span>
-                ))}
+                <img
+                  src={empresa.logo}
+                  alt={empresa.nombre}
+                  className="
+                    h-12 md:h-18 w-auto object-contain
+                    grayscale opacity-80 brightness-90
+                    dark:opacity-70 dark:brightness-125 dark:contrast-110
+                    transition-all duration-300
+                    group-hover:grayscale-0 group-hover:opacity-100 group-hover:brightness-100 group-hover:contrast-100
+                  "
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
             </div>
           ))}
