@@ -2,7 +2,7 @@
 const EMPRESAS = [
   {
     nombre: "Bohemio",
-    url: "https://oscar-principi.github.io/bohemio-mates/#/",
+    url: "https://bohemiomates.com.ar/",
     logo: "/images/empresas/bohemio_logo_transparent.png",
   },
   {
